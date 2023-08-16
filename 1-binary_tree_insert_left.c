@@ -19,11 +19,11 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	if (parent->left != NULL)
 	{
 		new_left_node->left = parent->left;
-		/*assigns the left child of the parent node to the left child of the new node*/
+		/*assigns left chld of parent node to left child of new node*/
 		/*new node take place of original left child of the parent node.*/
 		new_left_node->left->parent = new_left_node;
-		/*assigns the new node as the parent of the original left child of the parent node.*/
-		/*original left child of parent node will become grandchild of parent node and child of new node.*/
+		/*assigns new node as parent of original left child of parent node.*/
+		/*orig left chld of par node will be gchild of par node & chld of new node.*/
 	}
 	parent->left = new_left_node;
 	return (new_left_node);
