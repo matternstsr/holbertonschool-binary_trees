@@ -1,30 +1,38 @@
 #include "binary_trees.h"
-
 /**
- * binary_tree_insert_left-left node
- * @parent:Pointer
- * @value: Value
- * Return: Node
- */
-
-binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
+ * binary_tree_height - height of the tree
+ *
+ * @tree: root node
+ *
+ * Return: height number
+ */ 
+size_t binary_tree_height(const binary_tree_t *tree)
 {
-	binary_tree_t *new_left_node;
+	size_t left_side = 0;
+	size_t right_side = 0;
 
-	if (!parent)
+	if (!tree)
 	{
-		return (NULL);
+		return (0);/*if tree is empty*/
 	}
-	new_left_node = binary_tree_node(parent, value);
-	if (parent->left != NULL)
+	if (tree->left)/*recursively calculates the height of the left.*/
 	{
-		new_left_node->left = parent->left;
-		/*assigns left chld of parent node to left child of new node*/
-		/*new node take place of original left child of the parent node.*/
-		new_left_node->left->parent = new_left_node;
-		/*assigns new node as parent of original left child of parent node.*/
-		/*orig left chld of par node will be gchild of par node & chld of new node.*/
+		right_side = binary_tree_height(tree->left);
+		right_side = right_side + 1;
 	}
-	parent->left = new_left_node;
-	return (new_left_node);
+	if (tree->right)/*recursively calculates the height of the right.*/
+	{
+		left_side = binary_tree_height(tree->right);
+		left_side = left_side + 1;
+	}
+
+	if (left_side > right_side)/*return the greater side*/
+	{
+		return (left_side);
+	}
+	else
+	{
+		return (right_side);
+	}
+	/*walla*/
 }
