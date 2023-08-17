@@ -70,4 +70,5 @@ int binary_tree_is_full(const binary_tree_t *tree)
 			&& binary_tree_is_full(tree->right));/* recur till complete*/
 	return (0);
 /*walla*/
+/**leftnode*rightnode*/
 }

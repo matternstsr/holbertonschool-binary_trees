@@ -12,11 +12,11 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
 	if (!node) /*no node exists get out*/
 		return (NULL);
-	/* Note to self: If the node exists, it checks if the parent of 
-	 * the node exists and if the left child of the parent is not 
-	 * equal to the node. If this is true, it returns the left child 
-	 * of the parent. Otherwise, it checks if the right child of the 
-	 * parent is not equal to the node. If this is true, it returns the 
+	/** Note to self: If the node exists, it checks if the parent of
+	 * the node exists and if the left child of the parent is not
+	 * equal to the node. If this is true, it returns the left child
+	 * of the parent. Otherwise, it checks if the right child of the
+	 * parent is not equal to the node. If this is true, it returns the
 	 * right child of the parent.
 	 */
 	if (node->parent && node->parent->left != node)
