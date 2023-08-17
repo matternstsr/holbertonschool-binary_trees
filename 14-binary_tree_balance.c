@@ -17,7 +17,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 	left_side_ht = binary_tree_height(tree->left);
 	/*recur check the right side height or the tree*/
 	right_side_ht = binary_tree_height(tree->right);
-	return (left_side_ht - right_side_ht);/* return the DIFFERENCE of the heights*/
+	return (left_side_ht - right_side_ht);/* return the DIFF of the heights*/
 /*walla*/
 }
 
