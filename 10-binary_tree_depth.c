@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_depth-function that measures the how deep a binary tree is
- * @tree: Is the ponter to the binary tree
+ * @tree: Is the ponter to a node of the binary tree they want the depth of.
  * Return: how deep the binary tree is
  */
 
