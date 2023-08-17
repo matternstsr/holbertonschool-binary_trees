@@ -20,3 +20,48 @@ int binary_tree_balance(const binary_tree_t *tree)
 	return (left_side_ht - right_side_ht);/* return the DIFFERENCE of the heights*/
 /*walla*/
 }
+
+
+
+/*already made binary_tree_height #9 */
+
+
+/**
+ * binary_tree_height - height of the tree
+ * @tree: root node (tree pointer)
+ * Return: height number
+ */
+
+size_t binary_tree_height(const binary_tree_t *tree)
+{
+        size_t left_side = 0;
+        size_t right_side = 0;
+
+        if (!tree)
+        {
+                return (0);/*if tree is empty*/
+        }
+        if (tree->left)/*recursively calculates the height of the left.*/
+        {
+                right_side = binary_tree_height(tree->left);
+                right_side = right_side + 1;
+        }
+        if (tree->right)/*recursively calculates the height of the right.*/
+        {
+                left_side = binary_tree_height(tree->right);
+                left_side = left_side + 1;
+        }
+
+        if (left_side > right_side)/*return the greater side*/
+        {
+                return (left_side);
+        }
+        else
+        {
+                return (right_side);
+        }
+        /*walla*/
+}
+
+
+
